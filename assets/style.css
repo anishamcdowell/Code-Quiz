@@ -1,0 +1,115 @@
+:root {
+    --btn-bg-color: rgb(79, 105, 216); 
+    --btn-border: 2px solid blue;
+    
+}
+
+body {
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/*View highscores, timer, and Coding Quiz header*/
+
+.header {
+    display: flex;
+    flex-flow: column-reverse wrap;
+    text-align: center;
+}
+
+.header h1 {
+    margin-top: 50px;
+}
+
+#top-of-header {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    margin: 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-color: pink;
+    border-bottom: 2px solid hotpink;
+}
+
+a {
+    align-self: center;
+    color: black;
+}
+
+a:hover {
+    font-size: 16px;
+    color: rgb(255, 0, 128);
+}
+
+/*Button aesthetic*/
+
+#start-quiz-btn {
+    font-size: 18px;
+    margin: 0;
+    width: 120px;
+    align-self: center;
+}
+
+.btn {
+    background-color: var(--btn-bg-color);
+    border: var(--btn-border);
+    border-radius: 5px;
+    padding: 8px;
+    font-weight: bold;
+    color: white;
+    font-size: 14px;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: pink;
+    color: black;
+    border-color: hotpink;
+    cursor: pointer;
+    /*transform: scale(1.1);*/
+}
+
+#answer-btn-a::before {
+    content: "A. ";
+    color: black;
+}
+#answer-btn-b::before {
+    content: "B. ";
+    color: black;
+}
+#answer-btn-c::before {
+    content: "C. ";
+    color: black;
+}
+#answer-btn-d::before {
+    content: "D. ";
+    color: black;
+}
+
+/*Quiz section layout*/
+
+.main {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+}
+
+.quiz-container {
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    text-align: center;
+    width: 50%;
+}
+
+.answer-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: space-evenly;
+    width: 50%;
+}
+
