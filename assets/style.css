@@ -45,12 +45,16 @@ a:hover {
 }
 
 /*Button aesthetic*/
-
-#start-quiz-btn {
+#start-quiz-btn,
+#next-btn {
     font-size: 18px;
     margin: 0;
     width: 120px;
     align-self: center;
+}
+
+#next-btn {
+    margin-top: 20px;
 }
 
 .btn {
@@ -90,7 +94,6 @@ a:hover {
 }
 
 /*Quiz section layout*/
-
 .main {
     display: flex;
     flex-flow: column wrap;
