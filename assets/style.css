@@ -93,26 +93,35 @@ a:hover {
     color: black;
 }
 
+.option {
+    width: 70%;
+}
+
 /*Quiz section layout*/
 .main {
     display: flex;
     flex-flow: column wrap;
     align-content: center;
+    background-color: red;
 }
 
 .quiz-container {
-    display: flex;
-    flex-flow: column wrap;
+    display: block;
+    /* flex-flow: column wrap; */
     align-content: center;
     text-align: center;
     width: 50%;
+    background-color: pink;
 }
 
 .answer-container {
     display: flex;
     flex-flow: column wrap;
-    justify-content: space-evenly;
-    align-items: space-evenly;
-    width: 50%;
+    align-items: center;
+    width: 100%;
+    background-color: blue;
+    padding: 30px 0px 30px 0px;
 }
+
+
 

@@ -16,14 +16,20 @@
         </div>
     </header>
     <main class="main">
-        <button type="button" class="btn" id="start-quiz-btn">Start Quiz</button>
+        <div id="start-btn-container">
+            <button type="button" class="btn" id="start-quiz-btn" onclick="startQuiz()">Start Quiz</button>
+        </div>
+        
+
         <div class="quiz-container" id="quiz-container">
-            <div class="question-container" id="question-container"><h2>Question</h2></div>
+            <h2 class="question-container" id="question-container">
+            </h2>
+            <br>
             <div class="answer-container" id="answer-container">
-                <button type="button" class="btn" id="answer-btn-a">Answer 1</button>
-                <button type="button" class="btn" id="answer-btn-b">Answer 2</button>
-                <button type="button" class="btn" id="answer-btn-c">Answer 3</button>
-                <button type="button" class="btn" id="answer-btn-d">Answer 4</button>
+                <button type="button" class="btn option" id="answer-btn-a"></button>
+                <button type="button" class="btn option" id="answer-btn-b"></button>
+                <button type="button" class="btn option" id="answer-btn-c"></button>
+                <button type="button" class="btn option" id="answer-btn-d"></button>
                 <button type="button" class="btn" id="next-btn">Next</button>
             </div>
         </div>
