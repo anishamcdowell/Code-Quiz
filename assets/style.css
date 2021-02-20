@@ -112,6 +112,11 @@ a:hover {
     width: 50%;
 }
 
+input {
+    visibility: hidden;
+}
+
+
 .answer-container {
     display: flex;
     flex-flow: column wrap;

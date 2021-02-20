@@ -1,4 +1,5 @@
 //Global variables
+var form = document.getElementById("form");
 var isStarted = false;
 var timeEl = document.getElementById("timer");
 
@@ -10,8 +11,17 @@ var questionEl = document.getElementById("question-container");
 var scoresButton = document.getElementById("view-highscores");
 var retryButton = document.getElementById("retry-quiz");
 
-//Hidden Message
+//Button functions
+//Retry quiz button
 
+
+// function retry() {
+//     retryButton.addEventListener("click", retry());
+//     window.location.reload();
+//     return;
+// }
+
+//Hidden Message
 var timeUpMsg = document.getElementById("hidden-msg");
 console.log(timeUpMsg);
 
@@ -23,10 +33,10 @@ console.log(timeUpMsg);
 // var correctAnswers;
 // var options = ["A", "B", "C", "D"];
 
-// var answerA = document.getElementById("answer-btn-a");
-// var answerB = document.getElementById("answer-btn-b");
-// var answerC = document.getElementById("answer-btn-c");
-// var answerD = document.getElementById("answer-btn-d");
+var answerA = document.getElementById("answer-btn-a");
+var answerB = document.getElementById("answer-btn-b");
+var answerC = document.getElementById("answer-btn-c");
+var answerD = document.getElementById("answer-btn-d");
 
 // var results = "correctAnswers + "/" totalQuestions";
 
@@ -46,82 +56,88 @@ startButton.addEventListener("click", function startQuiz() {
     quizEl.style.display = "inline-block";
     nextButton.style.display = "inline-block";
     showTimer();
-});
+    });
 
-time = 3;
+    time = 60;
 
-function showTimer() {
-    var timerInterval = setInterval(function() {
-        time--;
-        timeEl.textContent = "Timer: " + time;
-        if (time == 0) {
-            clearInterval(timerInterval);
-            //Display "Time's up!" message
-            nextButton.style.display ="none";
-            quizEl.style.display ="none";
-            timeUpMsg.style.display = "inline-block";
-            scoresButton.style.display = "block";
-            retryButton.style.display = "block";
-        }
-    }, 1000);
+    function showTimer() {
+        var timerInterval = setInterval(function() {
+            time--;
+            timeEl.textContent = "Timer: " + time;
+            if (time == 0) {
+                clearInterval(timerInterval);
+                //Remove quiz and display only "Time's up!" message, view score button, and retry quiz button
+                nextButton.style.display ="none";
+                quizEl.style.display ="none";
+                timeUpMsg.style.display = "inline-block";
+                scoresButton.style.display = "block";
+                retryButton.style.display = "block";
+            }
+        }, 1000);
+
+    //First question
+    questionEl.textContent = questionsArray[0];
+    //Capture user answer for question 1
+        // function captureAnswer() {
+        //     if ( === 1) {
+        //         //add point to correct answer storage
+        //     } else {
+        //         //take 10 seconds off of timer
+        //     }
+        // }
+    //Display questions
+    nextQuestion();
 };
 
-//View my score buttonn function
+//Next Question function
 
-//Retry quiz button function
-function retry() {
-    retryButton.addEventListener("click, function(){
-        location.reload();
-    }")
+function nextQuestion() {
+    nextButton.addEventListener("click", function(){
+        console.log("Next question selected!");
+        for (var i = 0; i < questionsArray.length; i++) {
+            questionEl.textContent = questionsArray[i];
+        };
+    })   
+};
+
+//Quiz Data
+var questionsArray = [
+    "What does HTML stand for?",
+    "Which is the correct CSS syntax?",
+]
+
+//Arrays that contain every possible answer option for each question
+var optionsArray = {
+    q1options: ["Hypertyper Markup Language", "Hypertext Markup Language", "Hype Text Marking Language", "Have To Make Language"],
+    q2options: [ "font: 12px;","font-size: 12;", "text-size: 12px;", "font-size: 12px;"],
 }
 
+//Correct answers to each question where A=0, B=1, C=2, D=3
+var answersArray = [1, 3, 0, 2, 1];
 
-// //Load Questions
-// function loadQuestions() {
-//     // questionEl.textContent = questionsArray[0];
-//     // answerB.textContent = answersArray[0];
-//     // answerA.textContent = optionsArray[0][0];
-//     // answerC.textContent = optionsArray[0][1];
-//     // answerD.textContent = optionsArray[0][2];
-// }
+answerA.innerHTML = optionsArray.q1options[0];
+answerB.innerHTML = optionsArray.q1options[1];
+answerC.innerHTML = optionsArray.q1options[2];
+answerD.innerHTML = optionsArray.q1options[3];
 
-//Quiz
-var questionsArray = [
-    "What does HTML stand for?", 
-    "Which is the correct CSS syntax?", 
-    "Which of this is used to link a Javascript document to an HTML document?", 
-    "Which semantic tag can replace a generic <div> when creating a navigation bar?", 
-    "Which language is used to style the UI of an HTML document?"
-];
+function retryQuiz(){
+    retryButton.addEventListener("click", function reload(){
+        location.reload();
+    });
+    return;
+};
 
-var answersArray = [
-    "Hypertext Markup Language", 
-    "font-size: 12px;", 
-    "<script></script>", 
-    "<nav>", 
-    "CSS"
-];
+retryQuiz();
 
-var optionsArray = [
-    ["Hypertext Marked Language", "Hyper Typer Mark Language", "Hypertext Marking Language"],
-    ["font-size: 12px;", "font-size: 12;", "text-size: 12px;", "font: 12px;"],
-    ["<js></js>", "<link></link>", "<a></a>", "<script></script>"],
-    ["<navbar>", "<navigate>", "<nav>", "<navigation>"],
-    ["CSS", "Javascript", "Java", "Python"],
-];
 
-var randomQuestion = Math.floor(Math.random() * 5); 
-console.log(optionsArray[randomQuestion]);
+// var randomQuestion = Math.floor(Math.random() * 5); 
+// console.log(optionsArray[randomQuestion]);
 
-//Randomize answer to each question
+//View my score button function
+
 //Correct answer selected
 
 //Incorrect answer selection
-
-//Next button selected
-nextButton.addEventListener("click", function nextQuestion() {
-    console.log("Next question selected!")
-})
 
 //End of quiz
 //Final answer answered
