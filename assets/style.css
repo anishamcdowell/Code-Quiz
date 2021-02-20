@@ -102,7 +102,6 @@ a:hover {
     display: flex;
     flex-flow: column wrap;
     align-content: center;
-    background-color: red;
 }
 
 .quiz-container {
@@ -111,7 +110,6 @@ a:hover {
     align-content: center;
     text-align: center;
     width: 50%;
-    background-color: pink;
 }
 
 .answer-container {
@@ -119,9 +117,16 @@ a:hover {
     flex-flow: column wrap;
     align-items: center;
     width: 100%;
-    background-color: blue;
     padding: 30px 0px 30px 0px;
 }
 
-
+.hidden-msg {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: tomato;
+    font-weight: bold;
+}
 
