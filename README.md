@@ -4,7 +4,7 @@
 [Live project in its WIP state](https://anishamcdowell.github.io/Code-Quiz/)
 
 ## Screenshot
-[Gif showing current app progress. Timer length has been shortend to show functionality of the countdown ending and the user selecting the retry button.](assets/Code-Quiz.gif)
+![Gif showing current app progress. Timer length has been shortend to show functionality of the countdown ending and the user selecting the retry button.](assets/Code-Quiz.gif)
 
 ## Project Description
 The purpose of this project was to make a quiz app that would dynamically display questions and track a user's input and cummulative score using Javascript. While the quiz runs, a timer counts down showing the user how much time left they have to complete their quiz. If a correct answer is select the user can continue the quiz as usual, but for every incorrect selection the timer loses 10 seconds.
