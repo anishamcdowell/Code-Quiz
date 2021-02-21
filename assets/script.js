@@ -1,8 +1,13 @@
+
+
 //Global variables
+var time = 60;
 var form = document.getElementById("form");
 var isStarted = false;
 var timeEl = document.getElementById("timer");
 var correctAnswer;
+var right;
+var results = "Final score: " + right + "/" + 5;
 
 //Button and Container Elements
 var startButton = document.getElementById("start-quiz-btn");
@@ -41,8 +46,6 @@ startButton.addEventListener("click", function startQuiz() {
     showTimer();
     });
 
-    time = 60;
-
     function showTimer() {
         var timerInterval = setInterval(function() {
             time--;
@@ -59,6 +62,10 @@ startButton.addEventListener("click", function startQuiz() {
         }, 1000);
 
     //First question
+    answerA.classList.add("wrong");
+    answerB.classList.add("correct");
+    answerC.classList.add("wrong");
+    answerD.classList.add("wrong");
     questionEl.textContent = questionsArray[0];
     answerA.innerHTML = optionsArray.q1options[0];
     answerB.innerHTML = optionsArray.q1options[1];
@@ -67,17 +74,13 @@ startButton.addEventListener("click", function startQuiz() {
     correctAnswer = {
         answer1: "B",
     };
+    //Track answers in console
     console.log(correctAnswer);
-    //Evaluate user answer
-        // function captureAnswer() {
-        //     if ( === 1) {
-        //         //add point to correct answer storage
-        //     } else {
-        //         //take 10 seconds off of timer
-        //     }
-        // }
+    //Store user response
+    
     //Display next question
     displayQuestion2();
+    
 };
 
 //Next Question function
@@ -154,10 +157,12 @@ function displayQuestion5() {
 
 function endQuiz() {
     nextButton.addEventListener("click", function(event){
-        event.preventDefault()
+        event.preventDefault();
         resultsEl.style.display = "block";
+        resultsEl.textContent = results;
         retryButton.style.display = "inline-block";
         quizEl.style.display = "none";
+        
 })
 };
 
@@ -178,9 +183,6 @@ var optionsArray = {
     q4options: ["C++","CSS","Java","Javascript"],
     q5options: ["Totally!","Yes","No","Absolutely not!"]
 }
-
-//Correct answers index value to each question where 0=A, 1=B, 2=C, 3=D
-var answersArray = [1, 3, 0, 2, 3];
 
 function retryQuiz(){
     retryButton.addEventListener("click", function reload(){
