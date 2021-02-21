@@ -4,11 +4,9 @@
 [Live project in its WIP state](https://anishamcdowell.github.io/Code-Quiz/)
 
 ## Screenshot
-![Gif showing current app progress. Timer length has been shortend to show functionality of the countdown ending and the user selecting the retry button.](assets/Code-Quiz.gif)
+![Gif showing appt current funcationality](assets/Code-Quiz.gif)
 
 ## Project Description
-The purpose of this project was to make a quiz app that would dynamically display questions and track a user's input and cummulative score using Javascript. While the quiz runs, a timer counts down showing the user how much time left they have to complete their quiz. If a correct answer is select the user can continue the quiz as usual, but for every incorrect selection the timer loses 10 seconds.
+The purpose of this project was to use Javascript to make a quiz app that would dynamically display questions with answer options, as well as track a user's input and cumulative score. The app is meant to hold onto every final score and produce a highscores list as a result. While the quiz runs, a timer counts down showing the user how much time left they have to complete their quiz.
 
-I tried to make the HTML component of the quiz in a form consisting of radio buttons, that way the user could only select one option before moving on to the next question. The idea was that following the user selection, my Javascript would capture the user's input and compare it to an array that holds the index value of the correct answer. If the index value that the user selected matched that of the correct answer stored in my script, the local storage would store the user's points to be displayed at the end of the quiz. I struggled with how to actually capture user input on the form though, so while the user is able to use the next button to progress through the quiz their input was not caputured or assessed for true/false or right/wrong. 
-
-As for the the countdown, I was able to get the initial timer to begin running and to display a "time's up" message which offers the user the option to view their score or to restart the quiz. As I could not capture user input, the retry quiz button is currently the only dynamic element of the "time's up" display screen.
+I struggled figuring out how to capture user input from the quiz buttons and how to store the button selection in local storage so I did not have any values for my script to assess as right/wrong in order to produce a final score. Because I could not capture user input, the part of the quiz that is meant to reduce the timer by 10 seconds for every incorrect answer is not functional. Despite that, I was able to correctly create a timer function that when it reaches zero clears the quiz and prompts the user to restart. 
